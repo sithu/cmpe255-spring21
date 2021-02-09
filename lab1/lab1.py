@@ -79,6 +79,21 @@ class Solution:
         # 5. show the plot. Hint: plt.show(block=True).
         pass
         
+    def scatter_plot_num_items_per_order_price(self) -> None:
+        # TODO
+        # 1. create a list of prices by removing dollar sign and trailing space.
+        # 2. groupby the orders and sum it.
+        # 3. create a scatter plot:
+        #       x: orders' item price
+        #       y: orders' quantity
+        #       s: 50
+        #       c: blue
+        # 4. set the title and labels.
+        #       title: Numer of items per order price
+        #       x: Order Price
+        #       y: Num Items
+        pass
+    
         
 
 def test() -> None:
@@ -101,6 +116,7 @@ def test() -> None:
     assert 21.39 == solution.average_sales_amount_per_order()
     assert 50 == solution.num_different_items_sold()
     solution.plot_histogram_top_x_popular_items(5)
+    solution.scatter_plot_num_items_per_order_price()
 
     
 if __name__ == "__main__":
