@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 class Solution:
     def __init__(self) -> None:
@@ -64,6 +65,21 @@ class Solution:
         # How many different items are sold?
         return -1
     
+    def plot_histogram_top_x_popular_items(self, x:int) -> None:
+        from collections import Counter
+        letter_counter = Counter(self.chipo.item_name)
+        # TODO
+        # 1. convert the dictionary to a DataFrame
+        # 2. sort the values from the top to the least value and slice the first 5 items
+        # 3. create a 'bar' plot from the DataFrame
+        # 4. set the title and labels:
+        #     x: Items
+        #     y: Number of Orders
+        #     title: Most popular items
+        # 5. show the plot. Hint: plt.show(block=True).
+        pass
+        
+        
 
 def test() -> None:
     solution = Solution()
@@ -84,6 +100,7 @@ def test() -> None:
     assert 1834 == solution.num_orders()
     assert 21.39 == solution.average_sales_amount_per_order()
     assert 50 == solution.num_different_items_sold()
+    solution.plot_histogram_top_x_popular_items(5)
 
     
 if __name__ == "__main__":
