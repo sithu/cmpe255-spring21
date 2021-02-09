@@ -1,0 +1,3 @@
+pandas
+numpy
+tabulate==0.8.7
