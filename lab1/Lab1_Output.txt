@@ -1,0 +1,112 @@
+Question 1:- # Load data from data/chipotle.tsv file using Pandas library and 
+             # assign the dataset to the 'chipo' variable. 
+Answer:- 
+      order_id  ...  item_price
+0            1  ...      $2.39 
+1            1  ...      $3.39 
+2            1  ...      $3.39 
+3            1  ...      $2.39 
+4            2  ...     $16.98 
+...        ...  ...         ...
+4617      1833  ...     $11.75 
+4618      1833  ...     $11.75 
+4619      1834  ...     $11.25 
+4620      1834  ...      $8.75 
+4621      1834  ...      $8.75 
+
+[4622 rows x 5 columns]
+
+Question 2:-  # Top x number of entries from the dataset and display as markdown format.
+Answer:- Also answer is in output.md file for this question 
+
+|    |   order_id |   quantity | item_name                             | choice_description                                                                                                 | item_price   |
+|---:|-----------:|-----------:|:--------------------------------------|:-------------------------------------------------------------------------------------------------------------------|:-------------|
+|  0 |          1 |          1 | Chips and Fresh Tomato Salsa          | nan                                                                                                                | $2.39        |
+|  1 |          1 |          1 | Izze                                  | [Clementine]                                                                                                       | $3.39        |
+|  2 |          1 |          1 | Nantucket Nectar                      | [Apple]                                                                                                            | $3.39        |
+|  3 |          1 |          1 | Chips and Tomatillo-Green Chili Salsa | nan                                                                                                                | $2.39        |
+|  4 |          2 |          2 | Chicken Bowl                          | [Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Cheese, Sour Cream]]                                         | $16.98       |
+|  5 |          3 |          1 | Chicken Bowl                          | [Fresh Tomato Salsa (Mild), [Rice, Cheese, Sour Cream, Guacamole, Lettuce]]                                        | $10.98       |
+|  6 |          3 |          1 | Side of Chips                         | nan                                                                                                                | $1.69        |
+|  7 |          4 |          1 | Steak Burrito                         | [Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]] | $11.75       |
+|  8 |          4 |          1 | Steak Soft Tacos                      | [Tomatillo Green Chili Salsa, [Pinto Beans, Cheese, Sour Cream, Lettuce]]                                          | $9.25        |
+|  9 |          5 |          1 | Steak Burrito                         | [Fresh Tomato Salsa, [Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Lettuce]]                                | $9.25        |
+
+Question 3:- # The number of observations/entries in the dataset.
+Answer:-
+4622
+
+Question 4:- # print data info.
+Answer:-
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 4622 entries, 0 to 4621
+Data columns (total 5 columns):
+ #   Column              Non-Null Count  Dtype 
+---  ------              --------------  ----- 
+ 0   order_id            4622 non-null   int64 
+ 1   quantity            4622 non-null   int64 
+ 2   item_name           4622 non-null   object
+ 3   choice_description  3376 non-null   object
+ 4   item_price          4622 non-null   object
+dtypes: int64(2), object(3)
+memory usage: 180.7+ KB
+None
+
+Question 5: # TODO return the number of columns in the dataset
+Answer:-
+5 true no exception
+
+Question 6:- # TODO Print the name of all the columns.
+Answer:-
+order_id
+quantity
+item_name
+choice_description
+item_price
+
+Question 7:- # print the most ordered item
+
+Question 8:- # TODO How many items were orderd in total?
+Answer:- 4972
+
+Question 9:- # TODO 
+             # 1. Create a lambda function to change all item prices to float.
+             # 2. Calculate total sales.
+Answer:- 39237.02 
+
+Question 10:- # How many orders were made in the dataset?
+Answer:- 1834
+
+Question 11:- # TODO Average sales amount per order
+Answer:- 21.39 error/exception
+
+Question 12:-  # TODO
+               # How many different items are sold?
+Answer:- 50 no error/exception
+
+Question 13: # TODO
+        # 1. convert the dictionary to a DataFrame
+        # 2. sort the values from the top to the least value and slice the first 5 items
+        # 3. create a 'bar' plot from the DataFrame
+        # 4. set the title and labels:
+        #     x: Items
+        #     y: Number of Orders
+        #     title: Most popular items
+        # 5. show the plot. Hint: plt.show(block=True).
+Answer:- Attached as image in file named as lab1_output.
+
+Question 14:- # TODO
+        # 1. create a list of prices by removing dollar sign and trailing space.
+        # 2. groupby the orders and sum it.
+        # group = self.chipo.groupby('order_id').agg({'float_item_price_list': ['sum']})
+        # print(group)
+        # 3. create a scatter plot:
+        #       x: orders' item price
+        #       y: orders' quantity
+        #       s: 50
+        #       c: blue
+        # 4. set the title and labels.
+        #       title: Numer of items per order price
+        #       x: Order Price
+        #       y: Num Items
+Answer:- Attached as image in file named as lab1_output.
