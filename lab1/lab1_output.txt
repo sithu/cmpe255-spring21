@@ -55,6 +55,7 @@ choice_description
 item_price
 	  
 7. most_ordered_item pending(item_name,quantity,order_id)
+Ans: Chickebowl, 713926, 761
 
 8. How many items were ordered in total>
 Ans: 4972
