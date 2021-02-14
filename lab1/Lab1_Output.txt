@@ -65,6 +65,9 @@ choice_description
 item_price
 
 Question 7:- # print the most ordered item
+Answer:  assert item_name == 'Chicken Bowl'
+     assert order_id == 713926	
+     assert quantity == 761 (Answer differs than the given because quantity was also taken in consideration)
 
 Question 8:- # TODO How many items were orderd in total?
 Answer:- 4972
@@ -93,7 +96,7 @@ Question 13: # TODO
         #     y: Number of Orders
         #     title: Most popular items
         # 5. show the plot. Hint: plt.show(block=True).
-Answer:- Attached as image in file named as lab1_output.
+Answer:- Attached as image in file named as lab1_output.docx. Image name :- graph1.png 
 
 Question 14:- # TODO
         # 1. create a list of prices by removing dollar sign and trailing space.
@@ -109,4 +112,4 @@ Question 14:- # TODO
         #       title: Numer of items per order price
         #       x: Order Price
         #       y: Num Items
-Answer:- Attached as image in file named as lab1_output.
+Answer:- Attached as image in file named as lab1_output.docx. Image name :- graph2.png
