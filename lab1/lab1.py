@@ -35,7 +35,7 @@ class Solution:
     
     def print_columns(self) -> None:
         # TODO Print the name of all the columns.
-        return self.chipo.columns
+        return self.chipo.columns.values.tolist()
         pass
     
     def most_ordered_item(self):
@@ -130,7 +130,11 @@ def test() -> None:
     solution.info()
     count = solution.num_column()
     assert count == 5
+    columnNames = solution.print_columns()
+    print(columnNames)
     item_name, order_id, quantity = solution.most_ordered_item()
+    print(item_name)
+    print(quantity)
     assert item_name == 'Chicken Bowl'
     ## assert order_id == 713926	
     ## assert quantity == 159

@@ -23,3 +23,6 @@ Data columns (total 5 columns):
  4   item_price          4622 non-null   object
 dtypes: int64(2), object(3)
 memory usage: 180.7+ KB
+['order_id', 'quantity', 'item_name', 'choice_description', 'item_price']
+Chicken Bowl
+726
