@@ -1,0 +1,79 @@
+1. read the csv
+
+|      |   order_id |   quantity | item_name                             | choice_description                                                                                                                                                                                        | item_price   |
+1. read the csv file
+
+|-----:|-----------:|-----------:|:--------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------|
+|    0 |          1 |          1 | Chips and Fresh Tomato Salsa          | nan                                                                                                                                                                                                       | $2.39        |
+|    1 |          1 |          1 | Izze                                  | [Clementine]                                                                                                                                                                                              | $3.39        |
+|    2 |          1 |          1 | Nantucket Nectar                      | [Apple]                                                                                                                                                                                                   | $3.39        |
+|    3 |          1 |          1 | Chips and Tomatillo-Green Chili Salsa | nan                                                                                                                                                                                                       | $2.39        |
+|    4 |          2 |          2 | Chicken Bowl                          | [Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Cheese, Sour Cream]] 
+....
+
+2. top X columns (Also output for this in ouput.md)
+
+|    |   order_id |   quantity | item_name                             | choice_description                                                                                                 | item_price   |
+|---:|-----------:|-----------:|:--------------------------------------|:-------------------------------------------------------------------------------------------------------------------|:-------------|
+|  0 |          1 |          1 | Chips and Fresh Tomato Salsa          | nan                                                                                                                | $2.39        |
+|  1 |          1 |          1 | Izze                                  | [Clementine]                                                                                                       | $3.39        |
+|  2 |          1 |          1 | Nantucket Nectar                      | [Apple]                                                                                                            | $3.39        |
+|  3 |          1 |          1 | Chips and Tomatillo-Green Chili Salsa | nan                                                                                                                | $2.39        |
+|  4 |          2 |          2 | Chicken Bowl                          | [Tomatillo-Red Chili Salsa (Hot), [Black Beans, Rice, Cheese, Sour Cream]]                                         | $16.98       |
+|  5 |          3 |          1 | Chicken Bowl                          | [Fresh Tomato Salsa (Mild), [Rice, Cheese, Sour Cream, Guacamole, Lettuce]]                                        | $10.98       |
+|  6 |          3 |          1 | Side of Chips                         | nan                                                                                                                | $1.69        |
+|  7 |          4 |          1 | Steak Burrito                         | [Tomatillo Red Chili Salsa, [Fajita Vegetables, Black Beans, Pinto Beans, Cheese, Sour Cream, Guacamole, Lettuce]] | $11.75       |
+|  8 |          4 |          1 | Steak Soft Tacos                      | [Tomatillo Green Chili Salsa, [Pinto Beans, Cheese, Sour Cream, Lettuce]]                                          | $9.25        |
+|  9 |          5 |          1 | Steak Burrito                         | [Fresh Tomato Salsa, [Rice, Black Beans, Pinto Beans, Cheese, Sour Cream, Lettuce]]                                | $9.25        |
+
+3.Number of entries in the dataset
+4622
+
+4.Get information on the dataset 
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 4622 entries, 0 to 4621
+Data columns (total 5 columns):
+ #   Column              Non-Null Count  Dtype 
+---  ------              --------------  ----- 
+ 0   order_id            4622 non-null   int64 
+ 1   quantity            4622 non-null   int64 
+ 2   item_name           4622 non-null   object
+ 3   choice_description  3376 non-null   object
+ 4   item_price          4622 non-null   object
+dtypes: int64(2), object(3)
+memory usage: 180.7+ KB
+None
+
+5. get the number of columns
+Ans: 5
+
+6. Print column names
+order_id
+quantity
+item_name
+choice_description
+item_price
+	  
+7. most_ordered_item pending(item_name,quantity,order_id)
+Ans: Chickebowl, 713926, 761
+
+8. How many items were ordered in total>
+Ans: 4972
+
+9. total sales(using lambda function to convert item price from dollar string to float) 
+Ans: 39237.02
+
+10. get the total number of orders?
+Ans: 1834
+
+11. Average sales per order? 
+Ans: 21.39
+
+12. Number of different items sold?
+Ans: 50
+
+13. plot_histogram_top_x_popular_items  ===> screenshot in folder lab1_graphs name:bar_13
+
+14. scatter_plot_num_items_per_order_price ===> screenshot in folder lab1_graphs name:scatter_14
+
+
