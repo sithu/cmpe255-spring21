@@ -6,9 +6,9 @@ In this assigment, you will be building models to predict house prices using the
 
 * Build a model using a linear regression (Scikit-learn) algorithm to predict house prices. You can pick a feature from the dataset to work with the model.
 
-"""python
+```python
 from sklearn.linear_model import LinearRegression
-"""
+```
 
 > Y = C + w * X
 
@@ -23,9 +23,9 @@ from sklearn.linear_model import LinearRegression
 
 > Y = C + w<sub>1</sub> * X + w<sub>2</sub> * X<sup>2</sup> 
 
-"""python
+```python
 from sklearn.preprocessing import PolynomialFeatures
-"""
+```
 
 * X<sup>2</sup> is only a feature, but the curve that we are fitting is in quadratic form.
 * Plot the best 2nd degree polynomail curve.
