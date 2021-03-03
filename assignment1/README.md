@@ -1,6 +1,6 @@
 # Assignment 1
 
-In this assigment, you will be building models to predict house prices using the [Boston housing dataset](https://www.kaggle.com/c/boston-housing).
+In this assigment, you will be building models to predict house prices using the [Boston housing dataset](https://www.kaggle.com/vikrishnan/boston-house-prices).
 
 ## I - Linear Regression
 
