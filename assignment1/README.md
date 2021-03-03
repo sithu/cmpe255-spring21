@@ -43,3 +43,4 @@ from sklearn.preprocessing import PolynomialFeatures
 * Plot the curve.
 * Calculate a RMSE score.
 * Calculate a R-squared score.
+* Calculate an adjusted R-squared score.
