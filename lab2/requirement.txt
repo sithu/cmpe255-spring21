@@ -1,0 +1,6 @@
+pandas
+numpy
+tabulate==0.8.7
+matplotlib
+seaborn 
+sklearn

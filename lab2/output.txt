@@ -1,0 +1,9 @@
+best value of regulaarization parameter is: 0.0001
+Printing original msrp vs. predicted msrp of 5 cars
+ engine_cylinders transmission_type    driven_wheels  number_of_doors                       market_category vehicle_size     vehicle_style  highway_mpg  city_mpg  popularity          msrp     msrp_pred
+             12.0         automatic rear_wheel_drive              2.0 factory_tuner,luxury,high-performance        large             coupe           20        13         617 233280.229901 282094.233399
+              8.0         automatic four_wheel_drive              4.0     flex_fuel,luxury,high-performance      midsize           4dr_suv           19        14         258  92040.974818 131925.469880
+             10.0  automated_manual  all_wheel_drive              2.0               luxury,high-performance      compact       convertible           22        13        3105 174554.845335 190993.517036
+              6.0         automatic rear_wheel_drive              2.0                           performance        large             coupe           30        19        1851  30030.436640  33188.870403
+              6.0         automatic  all_wheel_drive              3.0                                   NaN        large passenger_minivan           16        12         549  26369.467298  11497.823445
+root mean square 0.4641014576089176
