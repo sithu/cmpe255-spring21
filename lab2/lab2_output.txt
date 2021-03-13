@@ -1,0 +1,9 @@
+best value of reg parameter is: 0.0001
+Original msrp vs. Predicted msrp of 5 cars
+ engine_cylinders transmission_type     driven_wheels  number_of_doors         market_category vehicle_size     vehicle_style  highway_mpg  city_mpg  popularity          msrp     msrp_pred
+              4.0         automatic   all_wheel_drive              4.0     crossover,hatchback      compact     4dr_hatchback           29        23         481  18581.954225  16646.244729
+             10.0            manual  rear_wheel_drive              2.0 exotic,high-performance      compact             coupe           19        12        1851 108011.258036 198788.151143
+              4.0         automatic front_wheel_drive              4.0             performance      compact             sedan           35        24        1439  21161.795718  28852.887166
+              6.0         automatic   all_wheel_drive              4.0                     NaN      midsize passenger_minivan           22        16          26  34890.551447  13492.994316
+              8.0         automatic  rear_wheel_drive              4.0               flex_fuel        large   crew_cab_pickup           19        14        1851  29731.618853  25847.297060
+RMSE : 0.453808182498257
