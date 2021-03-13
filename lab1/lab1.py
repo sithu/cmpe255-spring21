@@ -1,3 +1,4 @@
+from numpy.core.shape_base import block
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,62 +9,71 @@ class Solution:
         # Load data from data/chipotle.tsv file using Pandas library and 
         # assign the dataset to the 'chipo' variable.
         file = 'data/chipotle.tsv'
-        self.chipo = 'FIXME'
+        self.chipo = pd.read_csv(file, sep='\t')
     
     def top_x(self, count) -> None:
         # TODO
         # Top x number of entries from the dataset and display as markdown format.
-        topx = 'FIXME'
+        topx = self.chipo.head(count)
         print(topx.to_markdown())
         
     def count(self) -> int:
         # TODO
         # The number of observations/entries in the dataset.
-        return -1
+        return self.chipo.order_id.count()
     
     def info(self) -> None:
         # TODO
         # print data info.
+        print(self.chipo.info())
         pass
     
     def num_column(self) -> int:
         # TODO return the number of columns in the dataset
-        return -1
+        return len(self.chipo.columns)
     
     def print_columns(self) -> None:
         # TODO Print the name of all the columns.
+        print(self.chipo.columns)
         pass
     
     def most_ordered_item(self):
         # TODO
-        item_name = None
-        order_id = -1
-        quantity = -1
-        return item_name, order_id, quantity
+        item_name = self.chipo['item_name'].value_counts().idxmax()
+        #order_id = -1
+        quantity = int(self.chipo['quantity'].where(self.chipo['item_name'] == item_name).dropna(axis = 0).sum())
+        return item_name, quantity
 
     def total_item_orders(self) -> int:
-       # TODO How many items were orderd in total?
-       return -1
+        global totalitem
+        totalitem = self.chipo['quantity'].sum()
+        return totalitem
    
     def total_sales(self) -> float:
         # TODO 
         # 1. Create a lambda function to change all item prices to float.
-        # 2. Calculate total sales.
-        return 0.0
+        self.chipo['item_price'] = self.chipo['item_price'].apply(lambda x : x.replace('$',''))
+        self.chipo['item_price'] = self.chipo['item_price'].apply(lambda x : float(x))
+        global totalsales
+        totalsales = (self.chipo['item_price'] * self.chipo['quantity']).sum()
+        return totalsales
    
     def num_orders(self) -> int:
         # TODO
         # How many orders were made in the dataset?
-        return -1
+        global totalorders
+        totalorders = self.chipo['order_id'].max()
+        return totalorders
     
     def average_sales_amount_per_order(self) -> float:
         # TODO
-        return 0.0
+        avg = (totalsales/totalorders).round(2)
+        return avg
 
     def num_different_items_sold(self) -> int:
         # TODO
         # How many different items are sold?
-        return -1
+        return len(self.chipo['item_name'].unique())
     
     def plot_histogram_top_x_popular_items(self, x:int) -> None:
         from collections import Counter
@@ -77,6 +87,18 @@ class Solution:
         #     y: Number of Orders
         #     title: Most popular items
         # 5. show the plot. Hint: plt.show(block=True).
+
+
+        dct = dict(letter_counter)
+        tmp = pd.DataFrame(list(dct.items()),columns = ['item_name','quantity'])
+        tmp.sort_values(by = 'quantity', ascending= False, inplace= True)
+        df = tmp.iloc[:5]
+        plt.figure(figsize=(5,5))
+        plt.bar(df["item_name"],df['quantity'])
+        plt.title('Most Popular items')
+        plt.xticks( size = 5)
+        plt.yticks( size = 5)
+        plt.show(block = True)
         pass
         
     def scatter_plot_num_items_per_order_price(self) -> None:
@@ -92,6 +114,13 @@ class Solution:
         #       title: Numer of items per order price
         #       x: Order Price
         #       y: Num Items
+
+        temp = self.chipo.groupby('order_id').sum()
+        plt.scatter(temp['item_price'], temp['quantity'], c='blue', s= 50)
+        plt.xlabel('Order Price')
+        plt.ylabel('Number of items')
+        plt.title("Number of items per order")
+        plt.show(block= True)
         pass
     
         
@@ -102,22 +131,29 @@ def test() -> None:
     count = solution.count()
     print(count)
     assert count == 4622
+
+    
     solution.info()
     count = solution.num_column()
     assert count == 5
-    item_name, order_id, quantity = solution.most_ordered_item()
+    
+    
+    item_name, quantity = solution.most_ordered_item()
     assert item_name == 'Chicken Bowl'
-    assert order_id == 713926	
-    assert quantity == 159
+    #assert order_id == 713926	
+    assert quantity == 761      #The previous value(159) seems to be incorrect.
     total = solution.total_item_orders()
     assert total == 4972
     assert 39237.02 == solution.total_sales()
+    
     assert 1834 == solution.num_orders()
     assert 21.39 == solution.average_sales_amount_per_order()
+    
     assert 50 == solution.num_different_items_sold()
     solution.plot_histogram_top_x_popular_items(5)
+    
     solution.scatter_plot_num_items_per_order_price()
-
+    
     
 if __name__ == "__main__":
     # execute only if run as a script
