@@ -1,0 +1,35 @@
+Table has 506rows and 14 columns
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 506 entries, 0 to 505
+Data columns (total 14 columns):
+ #   Column   Non-Null Count  Dtype  
+---  ------   --------------  -----  
+ 0   CRIM     506 non-null    float64
+ 1   ZN       506 non-null    float64
+ 2   INDUS    506 non-null    float64
+ 3   CHAS     506 non-null    int64  
+ 4   NOX      506 non-null    float64
+ 5   RM       506 non-null    float64
+ 6   AGE      506 non-null    float64
+ 7   DIS      506 non-null    float64
+ 8   RAD      506 non-null    int64  
+ 9   TAX      506 non-null    float64
+ 10  PTRATIO  506 non-null    float64
+ 11  B        506 non-null    float64
+ 12  LSTAT    506 non-null    float64
+ 13  MEDV     506 non-null    float64
+dtypes: float64(12), int64(2)
+memory usage: 55.5 KB
+Linear Regression
+RMSE: 6.558372421381304
+R^2:  0.5149044976402835
+Polynomial Regression
+RMSE: 6.558372421381304
+R^2:  0.5857844942953512
+polynomial with 20 degree
+RMSE: 5.701888182388953
+R^2:  0.6333324378319982
+Multiple Features 'LSTAT','RM','PTRATIO'
+RMSE: 4.974434993788514
+adjusted R Squared 0.7123807719300754
+R^2:  0.720923917318291
