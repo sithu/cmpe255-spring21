@@ -4,7 +4,7 @@ Basic data manipulation using Pandas and Numpy libraries.
 
 Check out [Chipotle Exercises Video Tutorial](https://www.youtube.com/watch?v=lpuYZ5EUyS8&list=PLgJhDSE2ZLxaY_DigHeiIDC1cD09rXgJv&index=2) to watch a data scientist go through the exercises
 
-We will be using [this dataset](https://raw.githubusercontent.com/justmarkham/DAT8/master/data/chipotle.tsv) in the lab 1.
+We will be using [data/chipotle.tsv] in the lab 1.
 
 
 ## Install Dependency
