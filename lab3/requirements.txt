@@ -1,3 +1,2 @@
-kaggle-cli
-numpy
-sklearn
+scikit-learn
+pandas
