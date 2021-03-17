@@ -8,7 +8,7 @@ from sklearn import metrics
 class DiabetesClassifier:
     def __init__(self) -> None:
         col_names = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age', 'label']
-        self.pima = pd.read_csv('diabetes.csv', header=None, names=col_names)
+        self.pima = pd.read_csv('diabetes.csv', header=0, names=col_names, usecols=col_names)
         print(self.pima.head())
         self.X_test = None
         self.y_test = None
@@ -36,7 +36,7 @@ class DiabetesClassifier:
 
 
     def calculate_accuracy(self, result):
-        print(metrics.accuracy_score(self.y_test, result))
+        return metrics.accuracy_score(self.y_test, result)
 
 
     def examine(self):
@@ -47,7 +47,7 @@ class DiabetesClassifier:
         return self.y_test.mean()
     
     def confusion_matrix(self, result):
-        print(metrics.confusion_matrix(self.y_test, result))
+        return metrics.confusion_matrix(self.y_test, result)
     
 if __name__ == "__main__":
     classifer = DiabetesClassifier()
@@ -55,4 +55,6 @@ if __name__ == "__main__":
     print(f"Predicition={result}")
     score = classifer.calculate_accuracy(result)
     print(f"score={score}")
+    con_matrix = classifer.confusion_matrix(result)
+    print(f"confusion_matrix=${con_matrix}")
     
