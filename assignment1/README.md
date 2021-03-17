@@ -40,7 +40,6 @@ from sklearn.preprocessing import PolynomialFeatures
 
 > Y = C + w<sub>1</sub> * X<sub>1</sub> + w<sub>2</sub> * X<sub>2</sub> + w<sub>3</sub> * X<sub>3</sub>
 
-* Plot the curve.
 * Calculate a RMSE score.
 * Calculate a R-squared score.
 * Calculate an adjusted R-squared score.
