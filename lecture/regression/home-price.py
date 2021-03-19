@@ -11,6 +11,11 @@ print(labels)
 
 utils.plot_points(features, labels)
 
+# Feature cross / synthetic feature
+def feature_cross(num_rooms, population):
+    room_per_person_feature = num_rooms / population
+    return room_per_person_feature
+
 def simple_trick(base_price, price_per_room, num_rooms, price):
     # select random learning rate
     small_random_1 = random.random()*0.1
