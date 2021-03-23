@@ -15,22 +15,19 @@ class DiabetesClassifier:
         
 
     def define_feature(self):
-        feature_cols = ['pregnant', 'insulin', 'bmi', 'age']
+        feature_cols = ['pregnant', 'glucose', 'bp', 'skin', 'insulin', 'bmi', 'pedigree', 'age',]
         X = self.pima[feature_cols]
         y = self.pima.label
         return X, y
     
-    def train(self):
+    def train_test_split(self):
         # split X and y into training and testing sets
         X, y = self.define_feature()
         X_train, self.X_test, y_train, self.y_test = train_test_split(X, y, random_state=0)
         # train a logistic regression model on the training set
-        logreg = LogisticRegression()
-        logreg.fit(X_train, y_train)
-        return logreg
-    
-    def predict(self):
-        model = self.train()
+        return X_train, y_train
+
+    def predict(self,model):
         y_pred_class = model.predict(self.X_test)
         return y_pred_class
 
@@ -49,12 +46,45 @@ class DiabetesClassifier:
     def confusion_matrix(self, result):
         return metrics.confusion_matrix(self.y_test, result)
     
+    def descision_tree_classifier(self,X_train,y_train):
+        from sklearn import tree
+        model = tree.DecisionTreeClassifier(random_state=0, max_depth=5)
+        model.fit(X_train,y_train)
+        return model
+
+    def logisticregression(self,X_train,y_train):
+        model = LogisticRegression(max_iter=300)
+        model.fit(X_train, y_train)
+        return model
+    
+    def svm(self,X_train,y_train):
+        from sklearn import svm
+        model = svm.SVC(kernel='rbf')
+        model.fit(X_train, y_train, )
+        return model
+
 if __name__ == "__main__":
     classifer = DiabetesClassifier()
-    result = classifer.predict()
-    print(f"Predicition={result}")
+    X_train, y_train =  classifer.train_test_split()
+    model_regression = classifer.logisticregression(X_train,y_train)
+    result = classifer.predict(model_regression)
     score = classifer.calculate_accuracy(result)
-    print(f"score={score}")
+    print(f"logistic Regression: score={score}")
     con_matrix = classifer.confusion_matrix(result)
-    print(f"confusion_matrix=${con_matrix}")
+    print(f"Logistic Regression: confusion_matrix=${con_matrix}")
+
+    model_svm = classifer.svm(X_train,y_train)
+    result = classifer.predict(model_svm)
+    score = classifer.calculate_accuracy(result)
+    print(f"Support Vector Machine: score={score}")
+    con_matrix = classifer.confusion_matrix(result)
+    print(f"Support Vector Machine: confusion_matrix=${con_matrix}")
+
+
+    model_descision_tree= classifer.descision_tree_classifier(X_train,y_train)
+    result = classifer.predict(model_descision_tree)
+    score = classifer.calculate_accuracy(result)
+    print(f"Descision Tree: score={score}")
+    con_matrix = classifer.confusion_matrix(result)
+    print(f"Descision Tree: confusion_matrix=${con_matrix}")
     
