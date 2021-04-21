@@ -1,6 +1,6 @@
  # Assignment 2
 
-In this assignment, you will be building a SVM classifier to label human images.
+In this assignment, you will be building a SVM classifier to label famous people's images.
 
 ## Dataset
 
@@ -16,6 +16,8 @@ def load_data():
     print(faces.images_shape)
 ```
 
+## Requirements
+
 Each image contains [62x47] or nearly 3,000 pixels. Use each pixel value as a feature. You will use RandomizedPCA to extract 150 fundamental components to feed into your SVM model as a single pipeline.
 
 ```python
@@ -30,11 +32,13 @@ model = make_pipeline(pca, svc)
 
 1. Split the data into a training and testing set.
 
-2. Use a grid search cross-validation to explore combinations of parameters: C=margin hardness and gama=radial basis function kernel and determine the best model based on:
+2. Use a [grid search](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) cross-validation to explore combinations of [parameters](https://scikit-learn.org/stable/modules/grid_search.html#grid-search) to determine the best model: 
+   - C: margin hardness E.g. [1, 5, 10, 50]
+   - gama: radial basis function kernel E.g. [0.0001, 0.0005, 0.001, 0.005]
  * precision 
  * recall
  * f1-score
  * support
 
- 3. Draw a confusion matrix between features.
+ 3. Draw a confusion matrix between features in a [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) with X-axis of 'Actual' and Y-axis of 'Predicted'.
 
