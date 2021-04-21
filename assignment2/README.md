@@ -1,6 +1,6 @@
  # Assignment 2
 
-In this assignment, you will be building a SVM classifier to label famous people's images.
+In this assignment, you will be building a SVM classifier to label [famous people's images](https://scikit-learn.org/stable/auto_examples/applications/plot_face_recognition.html#sphx-glr-auto-examples-applications-plot-face-recognition-py).
 
 ## Dataset
 
@@ -40,5 +40,7 @@ model = make_pipeline(pca, svc)
  * f1-score
  * support
 
- 3. Draw a confusion matrix between features in a [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) with X-axis of 'Actual' and Y-axis of 'Predicted'.
+ 3. Draw a 4x6 subplots of images using names as label with color black for correct instances and red for incorrect instances.
+
+ 4. Draw a confusion matrix between features in a [heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html) with X-axis of 'Actual' and Y-axis of 'Predicted'.
 
